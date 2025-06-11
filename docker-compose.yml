@@ -9,13 +9,13 @@ networks:
 services:
   #was1 생성
   was1:
-    image: masungil/hello_web:latest
+    image: masungil/hello-web:latest
     networks:
       - kosa_network
       
   #was2 생성
   was2:
-    image: masungil/hello_web:latest
+    image: masungil/hello-web:latest
     networks:
       - kosa_network
   
