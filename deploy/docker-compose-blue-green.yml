@@ -42,7 +42,7 @@ services:
     ports:
       - 80:80 
     volumes:
-      - /home/kosa/helloWeb/docker/nginx-green.conf:/etc/nginx/nginx.conf
+      - ./nginx-green.conf:/etc/nginx/nginx.conf
     networks:
       - kosa_network
     depends_on:
@@ -57,7 +57,7 @@ services:
     ports:
       - 8080:80 
     volumes:
-      - /home/kosa/helloWeb/docker/nginx-blue.conf:/etc/nginx/nginx.conf
+      - ./nginx-blue.conf:/etc/nginx/nginx.conf
     networks:
       - kosa_network
     depends_on:
