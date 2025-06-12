@@ -1,0 +1,50 @@
+#version: '3.1'
+
+#사설망 network 생성
+networks:
+  kosa_network:
+    driver: bridge
+     
+#서비스 선언 
+services:
+  #was1 생성
+  was1-green:
+    image: masungil/hello-web:green
+    container_name: was1-green
+    networks:
+      - kosa_network
+      
+  #was2 생성
+  was2-green:
+    image: masungil/hello-web:green
+    container_name: was2-green
+    networks:
+      - kosa_network
+  
+  #was1 생성
+  was1-blue:
+    image: masungil/hello-web:blue
+    container_name: was1-blue
+    networks:
+      - kosa_network
+      
+  #was2 생성
+  was2-blue:
+    image: masungil/hello-web:blue
+    container_name: was2-blue
+    networks:
+      - kosa_network
+
+  #nginx 생성 
+  nginx:
+    image: nginx:latest
+    container_name: webserver
+    ports:
+      - 80:80 
+    volumes:
+      - ./nginx-green.conf:/etc/nginx/nginx.conf
+    networks:
+      - kosa_network
+    depends_on:
+      - was1-green
+      - was2-green
