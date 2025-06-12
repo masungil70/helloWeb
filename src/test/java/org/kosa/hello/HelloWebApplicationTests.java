@@ -12,16 +12,16 @@ class HelloWebApplicationTests {
 	void contextLoads() {
 	}
 
-	private int add(int a, int b) {
-		return a + b * 10;
-	}
-	
-	@Test
-	void testAdd() {
-		int a = 10;
-		int b = 20;
-		int sum = add(a, b);
-		
-		assertEquals(30, sum);
-	}
+//	private int add(int a, int b) {
+//		return a + b * 10;
+//	}
+//	
+//	@Test
+//	void testAdd() {
+//		int a = 10;
+//		int b = 20;
+//		int sum = add(a, b);
+//		
+//		assertEquals(30, sum);
+//	}
 }

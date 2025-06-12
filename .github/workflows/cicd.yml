@@ -1,4 +1,4 @@
-name: Our Workflow
+name: docker-compose 종료하지 않고 운영하기  
 on: 
   push:
     branches: [ main ]
@@ -53,8 +53,7 @@ jobs:
     
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
-        cd ~/helloWeb/docker
-        docker-compose down
-        docker-compose pull
-        docker-compose up -d
+        cd ~/helloWeb/docker  #작업 경로 변경
+        docker-compose pull   #docker hub으로 부터 이미지를 내려 받는다 
+        docker-compose up -d  #이미지가 변경된 것 만 반영하여 실행한다. 이와 같이하면 무중단 서비스로 운영되는 것음 아님 
         
