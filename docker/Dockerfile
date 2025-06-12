@@ -4,7 +4,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 #파일복사 
-COPY build/libs/helloWeb-0.0.1.jar app.jar 
+COPY ../build/libs/helloWeb-0.0.1.jar app.jar 
 
 #공개포트
 EXPOSE 8080 

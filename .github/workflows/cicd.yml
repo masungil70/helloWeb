@@ -29,7 +29,9 @@ jobs:
         run: ./gradlew bootJar
        
       - name: docker image build 
-        run: docker build -t ${{ secrets.USERNAME }}/${{env.REPOSITORY_NAME}} . 
+        run: |
+          cd docker #docker 폴더로 이동한다
+          docker build -t ${{ secrets.USERNAME }}/${{env.REPOSITORY_NAME}} . 
         
       - name: docker hub login
         uses: docker/login-action@v1
