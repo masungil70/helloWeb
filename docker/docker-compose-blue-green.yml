@@ -48,3 +48,19 @@ services:
     depends_on:
       - was1-green
       - was2-green
+
+      
+  #blue-nginx 생성 
+  nginx-blue:
+    image: nginx:latest
+    container_name: nginx-blue
+    ports:
+      - 8080:80 
+    volumes:
+      - ./nginx-blue.conf:/etc/nginx/nginx.conf
+    networks:
+      - kosa_network
+    depends_on:
+      - was1-blue
+      - was2-blue
+      
