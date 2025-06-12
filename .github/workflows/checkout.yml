@@ -30,7 +30,6 @@ jobs:
        
       - name: docker image build 
         run: |
-          cd docker #docker 폴더로 이동한다
           docker build -t ${{ secrets.USERNAME }}/${{env.REPOSITORY_NAME}} . 
         
       - name: docker hub login
