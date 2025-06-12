@@ -13,7 +13,7 @@ public class HomeController {
 	@GetMapping("/")
 	public String index(ServletRequest request) {
 		log.info("local port = {} : {}", request.getLocalPort(), request.getServerPort());
-		return "CICD 반영됨 1 Hello World... " + request.getLocalPort() + " : " + request.getServerPort() ;
+		return "CICD 반영됨 blue Hello World... " + request.getLocalPort() + " : " + request.getServerPort() ;
 	}
 }
 
