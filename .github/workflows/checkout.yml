@@ -55,7 +55,7 @@ jobs:
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
         cd ~/helloWeb/docker
-        docker-compose down
-        docker-compose pull
-        docker-compose up -d
+        docker compose down
+        docker compose pull
+        docker compose up -d
         
