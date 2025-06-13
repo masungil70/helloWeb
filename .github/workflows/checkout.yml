@@ -1,7 +1,9 @@
 name: Our Workflow
 on: 
   push:
-    branches: [ main ]
+    # no-main 으로 브렌치를 설정하여 실제 워크플로는 동작하지 않음 (main 으로 변경하면 동작함)
+    branches: [ no-main ]
+    
 
 #환경설정변수
 env:
@@ -55,7 +57,7 @@ jobs:
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
         cd ~/helloWeb/docker
-        docker compose down
+        docker compose down   #docker compose 종료하고 다시 docker hub에서 내려받고 실행한다    
         docker compose pull
         docker compose up -d
         

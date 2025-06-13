@@ -1,7 +1,8 @@
 name: docker-compose 종료하지 않고 운영하기  
 on: 
   push:
-    branches: [ main ]
+    # no-main 으로 브렌치를 설정하여 실제 워크플로는 동작하지 않음 (main 으로 변경하면 동작함)
+    branches: [ no-main ]
 
 #환경설정변수
 env:
