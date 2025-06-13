@@ -7,7 +7,7 @@ echo "[2] Blue 컨테이너 시작"
 docker compose  up -d was1-blue was2-blue
 
 echo "[3] Blue 컨테이너 Health Check 수행..."
-sleep 5
+sleep 10
 curl --fail http://localhost:8080 || {
     echo "Blue 컨테이너 Health check 실패. 롤백합니다."
     exit 1
