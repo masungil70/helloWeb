@@ -56,6 +56,9 @@ jobs:
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
         cd ${{env.USER}}/helloWeb/docker  #작업 경로 변경
+        
+        ls -al docker-compose.yml  # 👈 디버깅용, 파일이 있는지 확인
+         
         #blue-green 전략에 맞게 작업을 진행한다
         echo "[1] 새 이미지를 docker hub로 부터 pull 내려 받는다"
         docker pull masungil/hello-web:blue
