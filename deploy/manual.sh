@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "수 작업으로 git으로부터 내려받고 빌드 한 후 blue 이미지를 만들어서 배포하는 작업을 진행한다"
 echo "[0] git으로부터 소스 받기"
 git pull
 
