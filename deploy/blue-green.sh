@@ -1,7 +1,19 @@
 #!/bin/bash
 
+sleep 10
+curl --fail http://localhost:8080 || {
+    echo "1. Blue 컨테이너 Health check 실패. 롤백합니다."
+    exit 1
+}
+
 echo "[1] 새 이미지를 docker hub로 부터 pull 내려 받는다"
 docker pull masungil/hello-web:blue
+
+sleep 10
+curl --fail http://localhost:8080 || {
+    echo "2. Blue 컨테이너 Health check 실패. 롤백합니다."
+    exit 1
+}
 
 echo "[2] Blue 컨테이너 시작"
 docker compose  up -d was1-blue was2-blue
