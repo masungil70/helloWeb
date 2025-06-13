@@ -8,6 +8,7 @@ on:
 #환경설정변수
 env:
   REPOSITORY_NAME: hello-web:latest
+  USER: /home/kosa
       
 jobs:
   build:
@@ -56,7 +57,7 @@ jobs:
     
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
-        cd ~/helloWeb/docker
+        cd ${{env.USER}}/helloWeb/docker
         docker compose down   #docker compose 종료하고 다시 docker hub에서 내려받고 실행한다    
         docker compose pull
         docker compose up -d

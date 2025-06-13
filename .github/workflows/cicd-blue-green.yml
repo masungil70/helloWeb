@@ -6,6 +6,7 @@ on:
 #환경설정변수
 env:
   REPOSITORY_NAME: hello-web:blue
+  USER: /home/kosa
       
 jobs:
   build:
@@ -54,6 +55,6 @@ jobs:
     
     - name: docker-compose에서 이미지 다운로드 및 실행 
       run: |
-        cd ~/helloWeb/deploy  #작업 경로 변경
+        cd ${{env.USER}}/helloWeb/docker  #작업 경로 변경
         blue-green.sh         #blue-green 전략에 맞게 작업을 진행한다
         
