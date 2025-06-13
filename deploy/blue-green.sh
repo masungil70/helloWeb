@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "[1] 새 이미지를 docker hub로 부터 pull 내려 받는다"
 docker pull masungil/hello-web:blue
