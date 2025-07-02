@@ -16,7 +16,7 @@ docker build -t masungil/hello-web:blue .
 cd deploy
         
 echo "docker hub login\n"
-docker login -u masungil -p yjkim0812$
+docker login -u 아이디 -p 비번
         
 echo "docker tag 변경\n" 
 docker tag masungil/hello-web:blue masungil/hello-web:green
